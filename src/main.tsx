@@ -7,7 +7,7 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Router base={import.meta.env.BASE_URL} hook={useHashLocation}>
+    <Router hook={useHashLocation}>
       <App />
     </Router>
   </React.StrictMode>
