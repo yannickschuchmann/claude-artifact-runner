@@ -16,10 +16,10 @@
   - [Local test deployment](#local-test-deployment)
   - [Traditional web hosting](#traditional-web-hosting)
   - [Cloud hosting platforms](#cloud-hosting-platforms)
-     - [Netlify](#netlify)
-     - [Vercel](#vercel)
-     - [GitHub Pages](#github-pages)
-     - [Cloudflare Pages](#cloudflare-pages)
+    - [Netlify](#netlify)
+    - [Vercel](#vercel)
+    - [GitHub Pages](#github-pages)
+    - [Cloudflare Pages](#cloudflare-pages)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
@@ -69,23 +69,27 @@ For example, to view Mermaid diagrams, you can use an online viewer/editor, like
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - Node.js (version 14 or later)
 - npm (usually comes with Node.js)
 
 ## Getting started
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/claudio-silva/claude-artifact-runner.git
    cd claude-artifact-runner
    ```
 
 2. Install dependencies:
+
    ```
    npm install
    ```
 
 3. Start the development server:
+
    ```
    npm run dev
    ```
@@ -121,20 +125,22 @@ Before you begin, ensure you have the following installed:
 - Update `App.tsx` to change the overall layout or add new features.
 - Add or modify components in the `src/components/` directory.
   > **Note:** Shadcn UI components installed via `npx` are automatically placed in `src/components`. All components come pre-installed by default, but if you remove some and later want to reinstall any, you may simply run `npx shadcn-ui@latest add <your-component>`.
-  
+
 ### Removing unneeded components / libraries
 
-The **Recharts** library and ALL **Shadcn UI** components come pre-installed, so that all code that Claude may generate will run *out-of-the-box*.
+The **Recharts** library and ALL **Shadcn UI** components come pre-installed, so that all code that Claude may generate will run _out-of-the-box_.
 
 If you just want to run the artifact locally, you may leave things as they are, but if you want to deploy the application or use it as a base for a larger project, you may want to optimize the application's bundle size.
 
 To do that, you may remove the pre-installed components or libraries that are not required by your application.
 
 #### Unneeded Shadcn UI components:
-  Just delete the component's folder from `src/components`.
+
+Just delete the component's folder from `src/components`.
 
 #### Unneeded packages (ex: Recharts):
-  Use `npm remove` to uninstall them.
+
+Use `npm remove` to uninstall them.
 
 ## Building for production
 
@@ -157,11 +163,13 @@ Here are several ways to deploy these files:
 For local testing of the production build, you can use the `serve` package:
 
 1. Install `serve` globally:
+
    ```
    npm install -g serve
    ```
 
 2. Navigate to your project directory and run:
+
    ```
    serve -s dist
    ```
@@ -177,9 +185,10 @@ If you want to deploy to a shared or dedicated web server:
 Remember to update any necessary configuration files (like `vite.config.ts`) before building your app if it is not being served from the root of your domain.
 
 For example, for `vite.config.ts`, you may configure it like this:
+
 ```javascript
 export default {
-  base: '/subdirectory/', // Set this to the path your app is served from
+  base: "/subdirectory/", // Set this to the path your app is served from
   // other configurations
 };
 ```
@@ -193,11 +202,13 @@ Here are some popular free cloud hosting platforms and how to deploy your app to
 #### Netlify
 
 1. Install the Netlify CLI:
+
    ```
    npm install -g netlify-cli
    ```
 
 2. Run the following command in your project directory:
+
    ```
    netlify deploy
    ```
@@ -212,11 +223,13 @@ Here are some popular free cloud hosting platforms and how to deploy your app to
 #### Vercel
 
 1. Install the Vercel CLI:
+
    ```
    npm install -g vercel
    ```
 
 2. Run the following command in your project directory:
+
    ```
    vercel
    ```
@@ -228,11 +241,13 @@ Here are some popular free cloud hosting platforms and how to deploy your app to
 1. If you haven't already, create a GitHub repository for your project.
 
 2. Install the `gh-pages` package:
+
    ```
    npm install gh-pages --save-dev
    ```
 
 3. Add these scripts to your `package.json`:
+
    ```json
    "scripts": {
      "predeploy": "npm run build",
@@ -241,6 +256,7 @@ Here are some popular free cloud hosting platforms and how to deploy your app to
    ```
 
 4. Run:
+
    ```
    npm run deploy
    ```
@@ -252,16 +268,19 @@ Here are some popular free cloud hosting platforms and how to deploy your app to
 You can deploy to Cloudflare Pages either through the Cloudflare dashboard or using the `wrangler` CLI tool. Here's how to do it using `wrangler`, which is often the most straightforward method:
 
 1. **Install Wrangler:**
+
    ```
    npm install -g wrangler
    ```
 
 2. **Login to Cloudflare:**
+
    ```
    wrangler login
    ```
 
 3. **Deploy your project:**
+
    ```
    wrangler pages deploy dist
    ```
@@ -308,6 +327,7 @@ This project is open source and available under the [MIT License](LICENSE).
 I found [Claude-React-Jumpstart](https://github.com/Bklieger/Claude-React-Jumpstart) when looking for a way to run Artifacts outside of [claude.ai](https://claude.ai).
 
 However, it did not fully meet my needs, so I decided to make my own project, as I wanted something that:
-   * was completely pre-configured (no need to install or configure additional stuff),
-   * was ready to go with a single `npm install`, and
-   * included all components and libraries needed to fully replicate the Artifacts environment.
+
+- was completely pre-configured (no need to install or configure additional stuff),
+- was ready to go with a single `npm install`, and
+- included all components and libraries needed to fully replicate the Artifacts environment.
