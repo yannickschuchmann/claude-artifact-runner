@@ -1,12 +1,15 @@
-import './App.css'
-import Artifact from './artifact-component'
+import "./App.css";
+import { Route, Switch } from "wouter";
+import Artifact from "./_example-artifact-component";
+import CocoCoirCalculator from "./coco-coir-calculator";
 
 function App() {
   return (
-    <>
-      <Artifact />
-    </>
-  )
+    <Switch>
+      <Route path="/" component={Artifact} />
+      <Route path="/coco-coir-calculator" component={CocoCoirCalculator} />
+    </Switch>
+  );
 }
 
-export default App
+export default App;
