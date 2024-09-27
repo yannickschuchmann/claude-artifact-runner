@@ -26,6 +26,11 @@ const Artifact = () => {
           Go to Coco Coir Calculator
         </a>
       </Link>
+      <Link href="/changa-calculator">
+        <a className="mt-4 text-blue-500 hover:underline">
+          Go to Changa Calculator
+        </a>
+      </Link>
       <AlertDialog open={isOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
