@@ -18,9 +18,9 @@ const Start = () => {
           Go to FECO Bottling Calculator
         </a>
       </Link>
-      <Link href="/stamets-stack-calculator">
+      <Link href="/capsule-calculator">
         <a className="mt-4 text-blue-500 hover:underline">
-          Go to Stamets Stack Calculator
+          Go to Capsule Calculator
         </a>
       </Link>
     </div>
