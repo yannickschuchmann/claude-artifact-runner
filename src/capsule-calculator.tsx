@@ -13,9 +13,9 @@ import {
 import { Switch } from "@/components/ui/switch";
 
 const CAPSULE_SIZES = {
-  "00": { value: "00", label: "00", capacity: 750 },
-  "0": { value: "0", label: "0", capacity: 500 },
-  "1": { value: "1", label: "1", capacity: 400 },
+  "00": { value: "00", label: "00", capacity: 500 },
+  "0": { value: "0", label: "0", capacity: 330 },
+  "1": { value: "1", label: "1", capacity: 260 },
 };
 
 const PRESETS = {
